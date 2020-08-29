@@ -229,7 +229,7 @@ console.log(addFeedback(artists, 9, `Vincent Van Dough`));
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(artists, index) {
+function getArtistByIndex(array, index) {
   return 'The artist at index' + index + 'is'+ artists[index].name
   }
  
@@ -237,16 +237,17 @@ function getArtistByIndex(artists, index) {
   /**
 
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/ Note: https://www.w3schools.com/jsref/jsref_split.asp
+/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artists){
-const Newartists = [] 
+function get20s(array){
 
-  for (let i=o; i <artists.length; i++){
-    if (Artistyear[0] >= 1900 && Artistyear[1] <= 2000){
-      Newartists.push(artists[i].name)
+  for (let i=0; i <artists.length; i++)
+  if (artists[i].years <= 20000 && artists[i].years >= 1900){
+    return artists[i].name; 
+  }
 }
 console.log(get20s(artists)); 
+
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -292,9 +293,8 @@ function addArtist(id, name, years, genre, nationality, bio){
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
-const newArtist = [];
 
-function lotsOfArt(array){
+function lotsOfArt(artists){
   let newArtist = [];
   for ( let i  = 0   ; i < artists.length; i++){
     if (array[i].paintings >= 100 ){
