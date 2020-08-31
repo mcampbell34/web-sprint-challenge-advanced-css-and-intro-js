@@ -239,21 +239,18 @@ function getArtistByIndex(array, index) {
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(data) {
-  names = []
-  data.forEach(artist => {
-      const getYears = artist.years.split(" ")
-      if (parseInt(getYears[0]) >= 1900 && parseInt(getYears[2]) <= 2000)
-          names.push(artist.name)
-  })
+function get20s(array) {
+  olderArtist = [];
+  for (let i = 0; i < array.length; i++) {
+    if (parseInt(array[i].years) > 1900 || parseInt(array[i]) <= 2000) {
+      olderArtist.push(array[i].name)
+    }
+  }
+  return olderArtist;
+}
+console.log(get20s(artists))
 
-function lotsOfArt(array) {
-    let muchArt = []
-    array.forEach(artist => {
-        if (artist.paintings >= 100) {
-            muchArt.push(artist.name)
-        }
-    });
+
 
 
 
@@ -302,14 +299,19 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(array) {
-  let moreArt = []
-  array.forEach(artist => {
-      if (artist.paintings >= 100) {
-        moreArt.push(artist.name)
-      }
-  });
+function lotsOfArt(array){
 
+  let newArtist = [];
+  for (i = 0; i < array.length; i++) {
+    if (array[i].paintings >= 100) {
+      newArtist.push(array[i].name);
+    }
+  };
+  console.log(newArtist);
+
+}
+
+lotsOfArt(artists);
 
 // 🎨🎨 STRETCH 🎨🎨//
 
