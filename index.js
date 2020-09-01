@@ -214,11 +214,9 @@ console.log(artists[2].bio)
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-function addFeedback (artists, index, name){
-  artists[index].name = name;
-  return reviews;
-}
-console.log(addFeedback(artists, 9, `Vincent Van Dough`)); 
+artists.splice(8, 1, artists.name = "Vincent Van Gogh")
+
+console.log(artists[8])
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -303,7 +301,7 @@ function lotsOfArt(array){
 
   let newArtist = [];
   for (i = 0; i < array.length; i++) {
-    if (array[i].paintings >= 100) {
+    if (array[i].paintings > 100) {
       newArtist.push(array[i].name);
     }
   };
